@@ -1,0 +1,56 @@
+create table tutorials_tble(
+	tutorial_id INT NOT NULL AUTO_INCREMENT,
+	tutorial_title VARCHAR(100) NOT NULL,
+	tutorial_author VARCHAR(40) NOT NULL,
+	submission_date DATE,
+	PRIMARY KEY (tutorial_id)
+);
+
+
+insert into tutorials_tble(
+	tutorial_title, tutorial_author, submission_date
+)
+VALUE(
+	"Learn mySQL", "Yiibai", NOW()
+);
+
+insert into tutorials_tble(
+	tutorial_title, tutorial_author, submission_date
+)
+VALUE(
+	"java tUTORIAL", "Sunny", "2022-05-06"
+);
+
+insert into tutorials_tble(
+	tutorial_title, tutorial_author, submission_date
+)
+VALUE(
+	"Python lesson", "John Wick", "2023-08-21"
+);
+
+insert into tutorials_tble(
+	tutorial_title, tutorial_author, submission_date
+)
+VALUES(
+	"Python lesson", "John Wick", "2023-08-21"
+),
+(
+	"Machine learning", "Jk", "2011-02-21"
+),
+(
+	"Deep learning", "Bradley", "2018-02-21"
+);
+
+select * from tutorials_tble;
+
+select * from tutorials_tble
+where tutorial_title LIKE "%yth%";
+
+SELECT * FROM tutorials_tble
+WHERE submission_date = " 2022-05-06";
+
+UPDATE tutorials_tble SET tutorial_author = "APPLE"
+WHERE tutorial_id = "4";
+
+SELECT * FROM tutorials_tble
+ORDER BY tutorial_author DESC;
